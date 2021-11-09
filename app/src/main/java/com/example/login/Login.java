@@ -36,7 +36,6 @@ public class Login extends AppCompatActivity {
 
     EditText email, password;
     Button login;
-    //yunmin
     TextView register;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
@@ -48,7 +47,7 @@ public class Login extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         if(user !=null){
-            Intent intent = new Intent (getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent (getApplicationContext(),MainMenu.class);
             startActivity(intent);
         }
     }
@@ -67,9 +66,6 @@ public class Login extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
-
-
-
 
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +144,7 @@ public class Login extends AppCompatActivity {
                     finish();
                 }
                else if (documentSnapshot.getString("isUser" )!= null){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),MainMenu.class));
                     finish();
                 }
             }

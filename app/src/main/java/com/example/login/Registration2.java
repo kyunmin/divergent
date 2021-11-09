@@ -52,7 +52,7 @@ public class Registration2 extends AppCompatActivity {
 
 
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainMenu.class));
             finish();
         }
     disclaimer.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +123,7 @@ public class Registration2 extends AppCompatActivity {
                                 userInfo.put("isUser", "1");
 
                                 df.set(userInfo);
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(), MainMenu.class));
                             } else {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(Registration2.this, "Error is occurred!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
