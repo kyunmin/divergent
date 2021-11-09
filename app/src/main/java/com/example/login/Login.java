@@ -122,12 +122,6 @@ public class Login extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
     private void checkUserAccessLevel(String uid) {
         DocumentReference df = fStore.collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
